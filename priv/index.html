@@ -7,7 +7,7 @@
 
 <body>
 
-<h1 >Välkommen till balkong värmen</h1>
+<h1 >Välkommen till stug controller</h1>
 <div>Temperatur</div>
 <div id="actual_temp"></div>
 <!-- <div id="wanted_temp">Önskad temperatur</div> -->
@@ -18,7 +18,7 @@
 <button type="button" onclick="decrease_temp();">Minska temperatur</button>
 
 <script>
-    var ws = new WebSocket("ws://localhost:8080/please_upgrade_to_websocket");
+    var ws = new WebSocket("ws://varmdo.asuscomm.com:8081/please_upgrade_to_websocket");
 
     ws.onerror = function(event) {
         console.error("[ME]WebSocket error observed:", event);
