@@ -4,16 +4,16 @@ all:
 	rm -rf  *~ */*~  erl_cra*;
 	rm -rf *_specs *_config *.log catalog;
 	mkdir priv;
-	cp ../../web_example/priv/* priv;
+	cp ../../balcony/priv/* priv;
 #	interfaces
 	erlc -I ../../interfaces -o ebin ../../interfaces/*.erl;
 #	support
 	erlc -I ../../interfaces -o ebin ../../support/src/*.erl;
 #	cowboy
-	cp ../../web_example/deps/cowboy/ebin/* ebin;
-	cp ../../web_example/deps/cowlib/ebin/* ebin;
-	cp ../../web_example/deps/ranch/ebin/* ebin;
+	cp ../../balcony/deps/cowboy/ebin/* ebin;
+	cp ../../balcony/deps/cowlib/ebin/* ebin;
+	cp ../../balcony/deps/ranch/ebin/* ebin;
 #	application
-	cp ../../web_example/src/*.app ebin;
-	erlc -I ../../interfaces -o ebin ../../web_example/src/*.erl;
+	cp ../../balcony/src/*.app ebin;
+	erlc -I ../../interfaces -o ebin ../../balcony/src/*.erl;
 	erl -pa ebin -run balcony boot -sname balcony
